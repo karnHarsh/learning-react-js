@@ -1,1 +1,1 @@
-# my-react-js
+# learning-react-js
