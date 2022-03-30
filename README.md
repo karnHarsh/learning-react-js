@@ -108,3 +108,17 @@ function withdraw(account, amount) {
 **All React components must act like pure functions with respect to their props.**
 
 ### State and Lifecycle
+
+component rendered to DOM -> mounting
+component removed from DOM -> unmounting
+
+We can declare special methods (componentDidMount and componentDidUnmount) on component class to run some code when a component mounts or unmounts.
+
+*The componentDidMount() method runs after the component output has been rendered to the DOM.*
+
+```
+// Correct
+this.setState((state, props) => ({
+  counter: state.counter + props.increment
+}));
+```
