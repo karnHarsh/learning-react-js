@@ -57,3 +57,54 @@ const element = {
 ```
 
 These objects are called **React elements**.
+
+### Rendering elements
+*Elements are the smallest building blocks of React apps.*
+
+```
+const element = <h1>Hello, world</h1>;
+```
+
+**Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.**
+
+```
+<div id="root"></div>
+```
+The above must be inside some HTML file, we will call it "root" DOM node.
+To render a React element into a root DOM node, pass both to *ReactDOM.render()*.
+```
+const elemnet = <h1>Hello, world</h1>;
+ReactDOM.render(element, document.getElementById('root'));
+```
+
+React **elements** are **immutable**.
+An element is like a single frame in a movie: it represents the UI at a certain point of time.
+
+The only way to update the UI is to create a new element, and pass it to ReactDOM.render().
+
+For example, calling ReactDOM.render() inside a setInterval() as a callback.
+
+**React only updates what's necessary** ---> whatever changes
+*React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.*
+
+### Components and Props
+
+Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+
+Function component is just a JavaScript function.
+Class component is defined using ES6 class.
+
+When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+
+**Pure and Impure functions**
+Functions which never attempt to change their inputs and always return the same result for the same inputs are called *pure functions*.
+
+*Impure function example*
+```
+function withdraw(account, amount) {
+  account.total -= amount;
+}
+```
+**All React components must act like pure functions with respect to their props.**
+
+### State and Lifecycle
