@@ -122,3 +122,35 @@ this.setState((state, props) => ({
   counter: state.counter + props.increment
 }));
 ```
+
+### Handling Events
+
+```
+<button onClick={function}>Click</button>
+```
+
+In JavaScript, class methods are not bound by default.
+
+If we pass this.function to onClick without binding, it will give undefine.
+
+But if we bind the function in the constructor, then it will be fine.
+```
+this.function = this.function.bind(this);
+```
+
+There are two ways by which we can ignore the binding concept
+- If you are using the experimental public class fields syntax, you can use class fields to correctly bind callbacks
+- You can use arrow function in callback like, onClick = {() => this.handleClick()}
+
+But binding in the constructor is the best option available, else there are chances of unnecessary re-rendering with different values of same props in lower components.
+
+**Passing Arguments to Event Handlers**
+```
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+The above two lines are equivalent and either would work.
+
+### Conditional Rendering
+
+
