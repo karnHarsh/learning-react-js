@@ -153,4 +153,9 @@ The above two lines are equivalent and either would work.
 
 ### Conditional Rendering
 
+Nothing special here, you know more or less already.
+
+Returning null from a component’s render method does not affect the firing of the component’s lifecycle methods. For instance componentDidUpdate will still be called.
+
+
 
