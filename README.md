@@ -194,5 +194,28 @@ const content = posts.map((post) =>
     title={post.title} />
 );
 ```
-
 With the example above, the Post component can read props.id, but not props.key.
+
+
+### Forms
+
+**Controlled Components**
+
+An input form element whose value is controlled by React in this way (through state and setState()) is called a “controlled component”.
+
+With a controlled component, the input’s value is always driven by the React state, and can only be changed by setState().
+
+Same also true for textarea and select (dropdown one) in React.
+
+But for the file input tag, the value is *read only*, hence it is an **uncontrolled component** in React.
+
+```
+this.setState({
+  [name]: value
+});
+```
+where,
+```
+const name = target.name;
+```
+This is ES6 syntax.
