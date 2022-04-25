@@ -219,3 +219,9 @@ where,
 const name = target.name;
 ```
 This is ES6 syntax.
+
+### Lifting State Up
+
+In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”.
+
+Like onChange event can be written for common ancestor, rather than writing separately for each child component.
