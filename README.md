@@ -225,3 +225,20 @@ This is ES6 syntax.
 In React, sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”.
 
 Like onChange event can be written for common ancestor, rather than writing separately for each child component.
+
+### Composition vs Inheritance
+
+Special *children* prop to pass children elements directly into their output.
+
+Components or elements are just objects, so they can be passed as a prop like any other data.
+
+
+Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. So no use of inheritance.
+
+### Thinking in React
+
+- Step 1 : Break the UI into a component hierarchy
+- Step 2 : Build a static version in React (means state should never be used here)
+- Step 3 : Indentify the minimal (but complete) representation of UI state
+- Step 4 : Identify where your state should live
+- Step 5 : Add inverse data flow
